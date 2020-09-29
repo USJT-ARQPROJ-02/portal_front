@@ -1,0 +1,21 @@
+header {
+    display: block;
+    width: 100%;
+    background-color: #17174b;
+    padding: 20px 0;
+
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+            margin: 0 10px;
+            list-style: none;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}

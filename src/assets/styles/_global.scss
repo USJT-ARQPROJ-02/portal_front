@@ -1,0 +1,16 @@
+html, body { 
+    height: 100%; 
+}
+body { 
+    overflow-x: hidden;
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+    .container {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 95%;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}

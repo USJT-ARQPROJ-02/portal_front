@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Cadastro de voluntário</h1>
+
+        <div class="form-container">
+            <form class="contact" [formGroup]="registerFormGroup">
+                <mat-form-field class="full-width"> 
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="nome"
+                    type="name" [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="errorHandling('nome', 'required')">
+                        O nome é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width"> 
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email"
+                    type="email" [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="errorHandling('email', 'required')">
+                        O e-mail é <strong>obrigatório</strong>
+                    </mat-error>
+                    <mat-error *ngIf="errorHandling('email', 'email') && !errorHandling('email', 'required')">
+                        Insira um e-mail <strong>válido</strong>
+                    </mat-error>
+                </mat-form-field>
+                <div class="wrapper">
+                    <mat-form-field class="half-width"> 
+                        <mat-label>CPF ou CNPJ</mat-label>
+                        <input matInput formControlName="cpf_cnpj" maxlength="12"
+                        type="name" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="errorHandling('cpf_cnpj', 'required')">
+                            O campo é <strong>obrigatório</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="half-width"> 
+                        <mat-label>Telefone</mat-label>
+                        <input matInput formControlName="telefone"
+                        type="tel" [errorStateMatcher]="matcher" maxlength="11" placeholder="(00) 00000-0000">
+                        <mat-error *ngIf="errorHandling('telefone', 'required')">
+                            O telefone é <strong>obrigatório</strong>
+                        </mat-error>
+                        <mat-error *ngIf="errorHandling('telefone', 'minlenght')">
+                            O telefone precisa de no mínimo <strong>10 dígitos</strong>.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <mat-form-field class="full-width"> 
+                    <mat-label>Endereço</mat-label>
+                    <textarea matInput formControlName="endereço" [errorStateMatcher]="matcher" placeholder="Rua dos Bobos, nº 0"></textarea>
+                    <mat-error *ngIf="errorHandling('endereço', 'required')">
+                        O endereço é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+                <button class="send fadeInUp" [disabled]="registerFormGroup.invalid" (click)="send()">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
