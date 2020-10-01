@@ -10,9 +10,9 @@ export class VoluntaryService {
 
   constructor(private http : HttpClient) { }
 
-  
+
   register(data){
-    let fullAddress = this.apiUrl + '/voluntario/';
+    let fullAddress = this.apiUrl + '/voluntario';
     return this.http.post(fullAddress, data, {observe: 'response'});
   }
 }
