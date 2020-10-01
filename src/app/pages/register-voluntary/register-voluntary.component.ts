@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { VoluntaryService } from 'src/app/services/voluntary/voluntary.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -17,7 +18,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class RegisterVoluntaryComponent {
   
-  constructor() { }
+  constructor(private voluntaryService : VoluntaryService) { }
   
   registerFormGroup = new FormGroup({
     nome: new FormControl('', [
@@ -38,6 +39,9 @@ export class RegisterVoluntaryComponent {
     endereço: new FormControl('', [
       Validators.required
     ]),
+    senha: new FormControl('', [
+      Validators.required
+    ]),
   });
 
   matcher = new MyErrorStateMatcher();
@@ -48,7 +52,10 @@ export class RegisterVoluntaryComponent {
   }
 
   send() {
-    console.log(this.registerFormGroup)
+    this.voluntaryService.register(this.registerFormGroup.value).subscribe( result => {
+      console.log(result)
+    })
+
   }
 
 }

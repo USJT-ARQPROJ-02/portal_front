@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
