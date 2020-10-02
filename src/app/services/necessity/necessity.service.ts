@@ -16,6 +16,7 @@ export class NecessityService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
         'Access-Control-Allow-Origin': '*'
       })
     };
