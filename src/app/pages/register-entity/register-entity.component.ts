@@ -61,6 +61,9 @@ export class RegisterEntityComponent {
   send() {
     this.entityService.register(this.registerFormGroup.value).subscribe((result) => {
       console.log(result);
+      alert('Criado com sucesso')
+    }, error => {
+      alert('Houve um erro')
     });
   }
 

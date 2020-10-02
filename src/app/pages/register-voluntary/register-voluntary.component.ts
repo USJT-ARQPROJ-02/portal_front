@@ -48,6 +48,9 @@ export class RegisterVoluntaryComponent {
   send() {
     this.voluntaryService.register(this.registerFormGroup.value).subscribe((result) => {
         console.log(result);
-    });
+        alert('Criado com sucesso')
+      }, error => {
+        alert('Houve um erro')
+      });
   }
 }

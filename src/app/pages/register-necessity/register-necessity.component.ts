@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { NecessityService } from 'src/app/services/necessity/necessity.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -36,7 +37,7 @@ export class RegisterNecessityComponent {
     'Educação e Pesquisa'
   ]
 
-  constructor() { }
+  constructor(private necessityService : NecessityService) { }
 
   registerFormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
@@ -51,4 +52,12 @@ export class RegisterNecessityComponent {
     return this.registerFormGroup.controls[control].hasError(error);
   };
 
+  send() {
+    this.necessityService.register(this.registerFormGroup.value).subscribe((result) => {
+      console.log(result);
+      alert('Criado com sucesso')
+    }, error => {
+      alert('Houve um erro')
+    });
+  }
 }
