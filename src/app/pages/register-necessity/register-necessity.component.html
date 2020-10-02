@@ -41,7 +41,7 @@
                     </mat-error>
                 </mat-form-field>
 
-                <button class="send fadeInUp" [disabled]="registerFormGroup.invalid" >Enviar</button>
+                <button class="send fadeInUp" [disabled]="registerFormGroup.invalid" (click)="send()">Enviar</button>
             </form>
         </div>
     </div>
