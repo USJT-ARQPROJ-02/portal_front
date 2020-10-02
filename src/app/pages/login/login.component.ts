@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { VoluntaryService } from 'src/app/services/voluntary/voluntary.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,26 +18,24 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
+
 @Component({
-  selector: 'app-register-voluntary',
-  templateUrl: './register-voluntary.component.html',
-  styleUrls: ['./register-voluntary.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class RegisterVoluntaryComponent {
-  constructor(private voluntaryService: VoluntaryService) { }
+export class LoginComponent {
+
+  types = ['Entidade', 'Voluntário']
+  type
+
+  constructor(private loginService : LoginService) { }
 
   registerFormGroup = new FormGroup({
-    nome: new FormControl('', [Validators.required]),
-    cpf_cnpj: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    telefone: new FormControl('', [
-      Validators.required,
-      Validators.minLength(10),
-      Validators.maxLength(11),
-    ]),
-    endereco: new FormControl('', [Validators.required]),
-    senha: new FormControl('', [Validators.required]),
+    senha: new FormControl('', [Validators.required])
   });
+
 
   matcher = new MyErrorStateMatcher();
 
@@ -46,8 +44,15 @@ export class RegisterVoluntaryComponent {
   };
 
   send() {
-    this.voluntaryService.register(this.registerFormGroup.value).subscribe((result) => {
+    if (this.type == 'Entidade') {
+      this.loginService.loginEntity(this.registerFormGroup.value).subscribe((result) => {
         console.log(result);
-    });
+      });
+    } else {
+      this.loginService.loginVoluntary(this.registerFormGroup.value).subscribe((result) => {
+        console.log(result);
+      });
+    }
   }
+
 }

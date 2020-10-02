@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="container">
+        <div class="wrapper">
+            <h1 class="title">LOGIN</h1>
+            <div class="login-wrapper">
+                <mat-form-field class="full-width">
+                    <mat-label>Tipo</mat-label>
+                    <mat-select [(ngModel)]="type">
+                      <mat-option *ngFor="let type of types" [value]="type">
+                        {{ type }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <form class="contact" [formGroup]="registerFormGroup">
+                    <mat-form-field class="full-width"> 
+                        <mat-label><mat-icon>email</mat-icon> Email</mat-label>
+                        <input matInput formControlName="email"
+                        type="email" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="errorHandling('email', 'required')">
+                            O e-mail é <strong>obrigatório</strong>
+                        </mat-error>
+                        <mat-error *ngIf="errorHandling('email', 'email') && !errorHandling('email', 'required')">
+                            Insira um e-mail <strong>válido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width"> 
+                        <mat-label><mat-icon>https</mat-icon> Senha</mat-label>
+                        <input matInput formControlName="senha" [errorStateMatcher]="matcher" type="password">
+                        <mat-error *ngIf="errorHandling('senha', 'required')">
+                            A senha é <strong>obrigatória</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <button class="send" (click)="send()">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

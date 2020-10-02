@@ -5,14 +5,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class VoluntaryService {
+export class EntityService {
   apiUrl = environment.baseUrl
 
   constructor(private http : HttpClient) { }
 
-
   register(data){
-    let fullAddress = this.apiUrl + '/api/voluntario';
+    let fullAddress = this.apiUrl + '/api/entidade';
 
     const httpOptions = {
       headers: new HttpHeaders({

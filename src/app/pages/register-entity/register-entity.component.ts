@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { VoluntaryService } from 'src/app/services/voluntary/voluntary.service';
+import { EntityService } from 'src/app/services/entity/entity.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -19,12 +19,25 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-register-voluntary',
-  templateUrl: './register-voluntary.component.html',
-  styleUrls: ['./register-voluntary.component.scss'],
+  selector: 'app-register-entity',
+  templateUrl: './register-entity.component.html',
+  styleUrls: ['./register-entity.component.scss']
 })
-export class RegisterVoluntaryComponent {
-  constructor(private voluntaryService: VoluntaryService) { }
+export class RegisterEntityComponent {
+
+  entityTypes = [
+    'Animais',
+    'Meio Ambiente',
+    'Assistência social',
+    'Cultura',
+    'Saúde',
+    'Meio ambiente',
+    'Desenvolvimento e defesa de direitos',
+    'Habitação',
+    'Educação e Pesquisa'
+  ]
+
+  constructor(private entityService : EntityService) { }
 
   registerFormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
@@ -35,7 +48,7 @@ export class RegisterVoluntaryComponent {
       Validators.minLength(10),
       Validators.maxLength(11),
     ]),
-    endereco: new FormControl('', [Validators.required]),
+    tipo_voluntariado: new FormControl('', [Validators.required]),
     senha: new FormControl('', [Validators.required]),
   });
 
@@ -46,8 +59,9 @@ export class RegisterVoluntaryComponent {
   };
 
   send() {
-    this.voluntaryService.register(this.registerFormGroup.value).subscribe((result) => {
-        console.log(result);
+    this.entityService.register(this.registerFormGroup.value).subscribe((result) => {
+      console.log(result);
     });
   }
+
 }

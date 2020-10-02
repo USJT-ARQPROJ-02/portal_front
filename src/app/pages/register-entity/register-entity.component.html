@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="main">
     <div class="container">
-        <h1 class="title">Cadastro de voluntário</h1>
+        <h1 class="title">Cadastro de entidade</h1>
 
         <div class="form-container">
             <form class="contact" [formGroup]="registerFormGroup">
@@ -13,6 +13,7 @@
                         O nome é <strong>obrigatório</strong>
                     </mat-error>
                 </mat-form-field>
+
                 <mat-form-field class="full-width"> 
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email"
@@ -24,6 +25,7 @@
                         Insira um e-mail <strong>válido</strong>
                     </mat-error>
                 </mat-form-field>
+
                 <div class="wrapper">
                     <mat-form-field class="half-width"> 
                         <mat-label>CPF ou CNPJ</mat-label>
@@ -45,13 +47,17 @@
                         </mat-error>
                     </mat-form-field>
                 </div>
+
                 <mat-form-field class="full-width"> 
-                    <mat-label>Endereço</mat-label>
-                    <textarea matInput formControlName="endereco" [errorStateMatcher]="matcher" placeholder="Rua dos Bobos, nº 0"></textarea>
-                    <mat-error *ngIf="errorHandling('endereco', 'required')">
-                        O endereço é <strong>obrigatório</strong>
-                    </mat-error>
+                    <mat-label>Tipos</mat-label>
+                    <mat-select formControlName="tipo_voluntariado" multiple>
+                        <mat-option *ngFor="let type of entityTypes" [value]="type">{{type}}</mat-option>
+                    </mat-select>
+                <mat-error *ngIf="errorHandling('tipo_voluntariado', 'required')">
+                    <strong>É necessário selecionar pelo menos 1 tipo</strong>
+                </mat-error>
                 </mat-form-field>
+
                 <mat-form-field class="full-width"> 
                     <mat-label>Senha</mat-label>
                     <input matInput formControlName="senha" [errorStateMatcher]="matcher" type="password">

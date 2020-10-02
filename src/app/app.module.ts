@@ -7,16 +7,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterVoluntaryComponent } from './pages/register-voluntary/register-voluntary.component';
 import { HeaderComponent } from './components/header/header.component';
 
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterEntityComponent } from './pages/register-entity/register-entity.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterVoluntaryComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterEntityComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatIconModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
