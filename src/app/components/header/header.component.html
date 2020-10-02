@@ -1,20 +1,13 @@
 <header>
-    <div class="container">
+    <div class="container" *ngIf="token">
+        <a href="/" class="log-out" (click)="logout()">Sair</a>
         <ul class="menu">
             <li>
-                <a href="voluntario" [routerLink]="'/voluntario'">
-                    Voluntário
-                </a>
-            </li>
-            <li>
-                <a href="entidade" [routerLink]="'/entidade'">
-                    Entidades
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Necessidades
-                </a>
+                <a href="#" > Necessidades </a>
+                <ul class="sub-menu">
+                    <li><a href="" [routerLink]="'/cadastro-entidade'" *ngIf="role == 'entidade'">Cadastrar</a></li>
+                    <li><a href="">Listar</a></li>
+                </ul>
             </li>
         </ul>
     </div>

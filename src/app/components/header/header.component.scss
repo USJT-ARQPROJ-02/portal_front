@@ -4,17 +4,51 @@ header {
     background-color: #17174b;
     padding: 20px 0;
 
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .log-out {
+        color: white;
+    }
+
     .menu {
         display: flex;
         justify-content: flex-end;
 
         li {
+            position: relative;
             margin: 0 10px;
             list-style: none;
+
+            &:hover {
+                .sub-menu {
+                    display: block;
+                }
+            }
 
             a {
                 color: white;
                 text-decoration: none;
+            }
+
+            .sub-menu {
+                display: none;
+                position: absolute;
+                background-color: #4f4fab;
+                padding: 10px 15px;
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                    
+                    &:not(:last-of-type) {
+                        margin-bottom: 5px;
+
+                    }
+
+                }
             }
         }
     }

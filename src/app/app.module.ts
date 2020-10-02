@@ -15,6 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterEntityComponent } from './pages/register-entity/register-entity.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegisterNecessityComponent } from './pages/register-necessity/register-necessity.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './pages/login/login.component';
     RegisterVoluntaryComponent,
     HeaderComponent,
     RegisterEntityComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterNecessityComponent
   ],
   imports: [
     BrowserModule,

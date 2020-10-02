@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Cadastro de necessidade</h1>
+
+        <div class="form-container">
+            <form class="contact" [formGroup]="registerFormGroup">
+                <mat-form-field class="full-width"> 
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="nome"
+                    type="name" [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="errorHandling('nome', 'required')">
+                        O nome é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="full-width"> 
+                    <mat-label>Tipos</mat-label>
+                    <mat-select formControlName="tipo_voluntariado">
+                        <mat-option *ngFor="let type of entityTypes" [value]="type">{{type}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="errorHandling('tipo_voluntariado', 'required')">
+                        <strong>É necessário selecionar pelo menos 1 tipo</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width"> 
+                    <mat-label>Endereço</mat-label>
+                    <textarea matInput formControlName="endereco" [errorStateMatcher]="matcher" placeholder="Rua dos Bobos, nº 0"></textarea>
+                    <mat-error *ngIf="errorHandling('endereco', 'required')">
+                        O endereço é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width"> 
+                    <mat-label>Descrição</mat-label>
+                    <textarea matInput formControlName="descricao" [errorStateMatcher]="matcher" placeholder="Fale um pouco sobre a necessidade"></textarea>
+                    <mat-error *ngIf="errorHandling('descricao', 'required')">
+                        A descrição é <strong>obrigatória</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <button class="send fadeInUp" [disabled]="registerFormGroup.invalid" >Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

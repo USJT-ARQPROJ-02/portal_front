@@ -61,6 +61,16 @@
                         background-position: 100% 0;
                     }
                 }
+
+                .links {
+                    margin-top: 20px;
+
+                    a {
+                        text-decoration: underline;
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                }
             }
         }
     }
