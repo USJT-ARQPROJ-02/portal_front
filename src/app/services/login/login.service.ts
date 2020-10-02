@@ -25,14 +25,11 @@ export class LoginService {
 
   loginEntity(data){
     let fullAddress = this.apiUrl + '/api/entidade/login';
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
     
-    return this.http.post(fullAddress, data, httpOptions)
+    return this.http.post(fullAddress, data, 
+      {
+      headers: new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}),
+      observe: 'response'
+    })
   }
 }
