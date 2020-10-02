@@ -12,15 +12,11 @@ export class LoginService {
 
   loginVoluntary(data){
     let fullAddress = this.apiUrl + '/api/voluntario/login';
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
     
-    return this.http.post(fullAddress, data, httpOptions)
+    return this.http.post(fullAddress, data,{
+      headers: new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}),
+      observe: 'response' as 'body'
+      })
   }
 
   loginEntity(data){
@@ -30,6 +26,6 @@ export class LoginService {
       {
       headers: new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}),
       observe: 'response' as 'body'
-    })
+      })
   }
 }
