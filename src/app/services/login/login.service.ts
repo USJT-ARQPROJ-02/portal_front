@@ -29,7 +29,7 @@ export class LoginService {
     return this.http.post(fullAddress, data, 
       {
       headers: new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}),
-      observe: 'response'
+      observe: 'response' as 'body'
     })
   }
 }
