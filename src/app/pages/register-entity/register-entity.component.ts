@@ -41,7 +41,7 @@ export class RegisterEntityComponent {
 
   registerFormGroup = new FormGroup({
     nome: new FormControl('', [Validators.required]),
-    cpf_cnpj: new FormControl('', [Validators.required]),
+    cnpj: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     telefone: new FormControl('', [
       Validators.required,

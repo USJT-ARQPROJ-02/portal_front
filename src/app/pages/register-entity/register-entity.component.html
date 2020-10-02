@@ -28,10 +28,10 @@
 
                 <div class="wrapper">
                     <mat-form-field class="half-width"> 
-                        <mat-label>CPF ou CNPJ</mat-label>
-                        <input matInput formControlName="cpf_cnpj" maxlength="12"
+                        <mat-label>CNPJ</mat-label>
+                        <input matInput formControlName="cnpj" maxlength="12"
                         type="name" [errorStateMatcher]="matcher">
-                        <mat-error *ngIf="errorHandling('cpf_cnpj', 'required')">
+                        <mat-error *ngIf="errorHandling('cnpj', 'required')">
                             O campo é <strong>obrigatório</strong>
                         </mat-error>
                     </mat-form-field>

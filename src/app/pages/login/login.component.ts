@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
   constructor(private loginService : LoginService, private router: Router) { }
 
   ngOnInit() {
-    localStorage.setItem('token', 'aaaaaaaaaa')
-    localStorage.setItem('role', 'entidade')
   }
 
   registerFormGroup = new FormGroup({
@@ -54,7 +52,7 @@ export class LoginComponent implements OnInit {
       this.loginService.loginEntity(this.registerFormGroup.value).subscribe((result: any) => {
         localStorage.setItem('token', result.token);
         localStorage.setItem('role', 'entidade');
-        this.router.navigate(['/cadastro-entidade']);
+        this.router.navigate(['/cadastro-necessidade']);
       }, error => {
         alert('Dados incorretos, tente novamente')
       });
