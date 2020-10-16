@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   apiUrl = environment.baseUrl
+
+  // Observable string sources
+  private userSource = new BehaviorSubject<any[]>([]);;
 
   constructor(private http : HttpClient) { }
 
@@ -27,5 +31,14 @@ export class LoginService {
       headers: new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}),
       observe: 'response' as 'body'
       })
+  }
+
+   // Service message commands
+   updateUserData(data) {
+    this.userSource.next(data);
+  }
+  
+  getUserData() {
+    return this.userSource.asObservable()
   }
 }

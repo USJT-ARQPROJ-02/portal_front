@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Bem vindo, {{ userName }} !</h1>
+
+        <div class="necessities-wrapper">
+            <div class="necessity" *ngFor="let necessity of necessities">
+                <h3 class="name">{{ necessity.nome }}</h3>
+                <p class="type">{{ necessity.tipo_voluntariado }}</p>
+                <p class="address">{{ necessity.endereco }}</p>
+                <button class="know-more" (click)="candidature(necessity.id)">Candidatar-se</button>
+            </div>
+        </div>
+    </div>
+</div>

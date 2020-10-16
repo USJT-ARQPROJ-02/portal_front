@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/services/login/login.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
 
   types = ['Entidade', 'Voluntário']
   type
+  subscription : Subscription
 
   constructor(private loginService : LoginService, private router: Router) { }
 
@@ -50,7 +52,7 @@ export class LoginComponent implements OnInit {
   send() {
     if (this.type == 'Entidade') {
       this.loginService.loginEntity(this.registerFormGroup.value).subscribe((result: any) => {
-        localStorage.setItem('token', result.token);
+        localStorage.setItem('token', result.body.token);
         localStorage.setItem('role', 'entidade');
         this.router.navigate(['/cadastro-necessidade']);
       }, error => {
@@ -58,9 +60,10 @@ export class LoginComponent implements OnInit {
       });
     } else {
       this.loginService.loginVoluntary(this.registerFormGroup.value).subscribe((result: any) => {
-        localStorage.setItem('token', result.token);
+        this.loginService.updateUserData(result.body.user)
+        localStorage.setItem('token', result.body.token);
         localStorage.setItem('role', 'voluntario');
-        this.router.navigate(['/voluntario']);
+        this.router.navigate(['/listar-necessidade']);
       }, error => {
         alert('Dados incorretos, tente novamente')
       });

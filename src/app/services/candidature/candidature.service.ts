@@ -5,13 +5,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class NecessityService {
+export class CandidatureService {
   apiUrl = environment.baseUrl
 
   constructor(private http : HttpClient) { }
 
-  register(data){
-    let fullAddress = this.apiUrl + '/api/necessidade';
+  post(data){
+    let fullAddress = this.apiUrl + '/api/candidatura';
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -23,20 +23,4 @@ export class NecessityService {
     
     return this.http.post(fullAddress, data, httpOptions)
   }
-
-  get() {
-    let fullAddress = this.apiUrl + '/api/necessidade';
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
-        'Access-Control-Allow-Origin': '*'
-      }), observe: 'response' as 'body'
-    };
-    
-    return this.http.get(fullAddress, httpOptions)
-  }
-
-
 }

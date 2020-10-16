@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterEntityComponent } from './pages/register-entity/register-entity.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterNecessityComponent } from './pages/register-necessity/register-necessity.component';
+import { ListNecessityComponent } from './pages/list-necessity/list-necessity.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterNecessityComponent } from './pages/register-necessity/register-
     HeaderComponent,
     RegisterEntityComponent,
     LoginComponent,
-    RegisterNecessityComponent
+    RegisterNecessityComponent,
+    ListNecessityComponent
   ],
   imports: [
     BrowserModule,
