@@ -43,7 +43,9 @@ export class ListNecessityComponent implements OnInit {
     }
 
     this.candidatureService.post(response).subscribe(result => {
-      console.log(result)
+      alert('candidatado com sucesso')
+    }, error => {
+      alert('houve um erro')
     })
   }
 
