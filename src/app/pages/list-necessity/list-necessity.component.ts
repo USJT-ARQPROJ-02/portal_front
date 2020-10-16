@@ -28,7 +28,6 @@ export class ListNecessityComponent implements OnInit {
     })
 
     this.necessityService.get().subscribe( (result : any)=> {
-      console.log(result)
       result.body.forEach(necessity => {
         this.necessities.push(necessity)
       });

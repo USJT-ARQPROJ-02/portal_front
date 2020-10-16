@@ -52,9 +52,10 @@ export class LoginComponent implements OnInit {
   send() {
     if (this.type == 'Entidade') {
       this.loginService.loginEntity(this.registerFormGroup.value).subscribe((result: any) => {
+        this.loginService.updateUserData(result.body.user)
         localStorage.setItem('token', result.body.token);
         localStorage.setItem('role', 'entidade');
-        this.router.navigate(['/cadastro-necessidade']);
+        this.router.navigate(['/home-entidade']);
       }, error => {
         alert('Dados incorretos, tente novamente')
       });

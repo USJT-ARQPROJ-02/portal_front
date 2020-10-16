@@ -23,4 +23,32 @@ export class CandidatureService {
     
     return this.http.post(fullAddress, data, httpOptions)
   }
+
+  getAll(){
+    let fullAddress = this.apiUrl + '/api/candidatura';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
+
+  update(data, id) {
+    let fullAddress = this.apiUrl + '/api/candidatura/' + id;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+    
+    return this.http.put(fullAddress, data, httpOptions)
+  }
 }

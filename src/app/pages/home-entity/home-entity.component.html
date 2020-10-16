@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Lista de candidaturas</h1>
+
+        <div class="wrapper" *ngFor="let necessity of necessities">
+            <h2 class="necessity-name">{{ necessity.nome }}</h2>
+            
+            <div class="necessities-wrapper">
+                <div class="necessity"  *ngFor="let candidature of necessity.Candidaturas">
+                    <ng-container *ngIf="candidature.Voluntario.status == null">
+                        <div>
+                            <img class="icon" src="../../../assets/img/avatar.png" alt="">
+                            <h3 class="name">{{ candidature.Voluntario.nome }}</h3>
+                            <p class="email">{{ candidature.Voluntario.email }}</p>
+                            <p class="address">{{ candidature.Voluntario.endereco }}</p>
+                        </div>
+                        <div class="button-wrapper">
+                            <button class="refuse" (click)="refuseCandidature(candidature.id)">Recusar</button>
+                            <button class="accept" (click)="acceptCandidature(candidature.id)">Aceitar</button>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

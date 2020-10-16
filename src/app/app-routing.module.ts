@@ -8,6 +8,7 @@ import { RegisterVoluntaryComponent } from './pages/register-voluntary/register-
 
 import { RoleGuardService as RoleGuard } from './services/auth/role-guard.service';
 import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
+import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,14 @@ const routes: Routes = [
   {
     path: 'cadastro-necessidade',
     component: RegisterNecessityComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: 'entidade'
+    }
+  },
+  {
+    path: 'home-entidade',
+    component: HomeEntityComponent,
     canActivate: [RoleGuard],
     data: {
       expectedRole: 'entidade'
