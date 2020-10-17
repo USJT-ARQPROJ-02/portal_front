@@ -9,12 +9,14 @@ import { RegisterVoluntaryComponent } from './pages/register-voluntary/register-
 import { RoleGuardService as RoleGuard } from './services/auth/role-guard.service';
 import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
 import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 
 const routes: Routes = [
   { path: '', component: LoginComponent, },
   { path: 'voluntario', component: RegisterVoluntaryComponent },
   { path: 'entidade', component: RegisterEntityComponent },
+  { path: 'reset-password', component: ResetPasswordComponent, },
   { 
     path: 'listar-necessidade',
     component: ListNecessityComponent,

@@ -18,6 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterNecessityComponent } from './pages/register-necessity/register-necessity.component';
 import { ListNecessityComponent } from './pages/list-necessity/list-necessity.component';
 import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
     LoginComponent,
     RegisterNecessityComponent,
     ListNecessityComponent,
-    HomeEntityComponent
+    HomeEntityComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
