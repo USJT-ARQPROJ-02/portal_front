@@ -44,7 +44,7 @@
             <div class="necessity" *ngFor="let necessity of finishedNecessities">
                 <div class="wrapper">
                     <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
-                    <p class="date" *ngIf="necessity.data_inicio"> <span>{{ necessity.Necessidade.data_inicio }}</span> à <span>{{ necessity.Necessidade.data_fim }}</span></p>
+                    <p class="date" *ngIf="necessity.Necessidade.data_inicio"> <span>{{ necessity.Necessidade.data_inicio }}</span> à <span>{{ necessity.Necessidade.data_fim }}</span></p>
                 </div>
             </div>
             <div *ngIf="finishedNecessities.length == 0" class="empty-text">
