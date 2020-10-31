@@ -44,8 +44,8 @@ export class ListCandidaturesComponent implements OnInit {
       });
 
       this.necessities.forEach(necessity => {
-        necessity.data_inicio = moment(necessity.data_inicio).format('DD/MM/YY')
-        necessity.data_fim = moment(necessity.data_fim).format('DD/MM/YY')
+        necessity.Necessidade.data_inicio = moment(necessity.Necessidade.data_inicio).format('DD/MM/YY')
+        necessity.Necessidade.data_fim = moment(necessity.Necessidade.data_fim).format('DD/MM/YY')
 
     });
     })
