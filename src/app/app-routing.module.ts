@@ -11,6 +11,7 @@ import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.servic
 import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ListCandidaturesComponent } from './pages/list-candidatures/list-candidatures.component';
+import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,14 @@ const routes: Routes = [
   {
     path: 'home-entidade',
     component: HomeEntityComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: 'entidade'
+    }
+  },
+  {
+    path: 'voluntario-info/:id',
+    component: VoluntaryInfoComponent,
     canActivate: [RoleGuard],
     data: {
       expectedRole: 'entidade'

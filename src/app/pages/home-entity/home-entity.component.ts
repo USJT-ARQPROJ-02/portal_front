@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CandidatureService } from 'src/app/services/candidature/candidature.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class HomeEntityComponent implements OnInit {
 
   necessities = []
 
-  constructor(private candidatureService : CandidatureService) { }
+  constructor(private candidatureService : CandidatureService, private router : Router) { }
 
   ngOnInit(): void {
     this.candidatureService.getAll().subscribe( (result : any)=> {
@@ -18,6 +19,7 @@ export class HomeEntityComponent implements OnInit {
       result.forEach(necessity => {
         this.necessities.push(necessity)
       });
+
     })
   }
 
@@ -39,6 +41,11 @@ export class HomeEntityComponent implements OnInit {
     this.candidatureService.update(response, id).subscribe(result => {
       alert(result)
     })
+  }
+
+  openMoreInfo(id, event) {
+    event.preventDefault()
+    this.router.navigate(['/voluntario-info', id]);
   }
 
 }

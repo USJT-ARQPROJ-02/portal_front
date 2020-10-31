@@ -17,6 +17,7 @@
                             <h3 class="name">{{ candidature.Voluntario.nome }}</h3>
                             <p class="email">{{ candidature.Voluntario.email }}</p>
                             <p class="address">{{ candidature.Voluntario.endereco }}</p>
+                            <a href="#" class="more-information" (click)="openMoreInfo(candidature.Voluntario.id, $event)">Mais informações</a>
                         </div>
                         <div class="button-wrapper">
                             <button class="refuse" (click)="refuseCandidature(candidature.id)">Recusar</button>

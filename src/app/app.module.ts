@@ -23,6 +23,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { AgmCoreModule } from '@agm/core';
 import { ListCandidaturesComponent } from './pages/list-candidatures/list-candidatures.component';
 import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
+import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
     ListNecessityComponent,
     HomeEntityComponent,
     ResetPasswordComponent,
-    ListCandidaturesComponent
+    ListCandidaturesComponent,
+    VoluntaryInfoComponent
   ],
   imports: [
     BrowserModule,

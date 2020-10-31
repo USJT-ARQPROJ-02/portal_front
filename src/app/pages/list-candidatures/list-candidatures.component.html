@@ -1,14 +1,54 @@
 <app-header></app-header>
 <div class="main">
     <div class="container">
-        <h1 class="title">Candidaturas realizadas</h1>
+        <h1 class="title">Acompanhe seu histórico de candidaturas</h1>
 
+        <h2 class="subtitle">Candidaturas pendentes</h2>
         <div class="necessities-wrapper">
             <div class="necessity" *ngFor="let necessity of necessities">
                 <div class="wrapper">
                     <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
                     <b> Aguardando aprovação da entidade </b>
                 </div>
+            </div>
+        </div>
+
+        <h2 class="subtitle">Candidaturas aprovadas</h2>
+        <div class="necessities-wrapper">
+            <div class="necessity" *ngFor="let necessity of acceptedNecessities">
+                <div class="wrapper">
+                    <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
+                    <b> Aguardando aprovação da entidade </b>
+                </div>
+            </div>
+            <div *ngIf="acceptedNecessities.length == 0" class="empty-text">
+                Não há necessidades aprovadas atualmente
+            </div>
+        </div>
+
+        <h2 class="subtitle">Candidaturas recusadas</h2>
+        <div class="necessities-wrapper">
+            <div class="necessity" *ngFor="let necessity of refusedNecessities">
+                <div class="wrapper">
+                    <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
+                    <b> Aguardando aprovação da entidade </b>
+                </div>
+            </div>
+            <div *ngIf="refusedNecessities.length == 0" class="empty-text">
+                Não há necessidades recusadas atualmente
+            </div>
+        </div>
+
+        <h2 class="subtitle">Candidaturas encerradas</h2>
+        <div class="necessities-wrapper">
+            <div class="necessity" *ngFor="let necessity of finishedNecessities">
+                <div class="wrapper">
+                    <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
+                    <b> Aguardando aprovação da entidade </b>
+                </div>
+            </div>
+            <div *ngIf="finishedNecessities.length == 0" class="empty-text">
+                Não há necessidades realizadas atualmente
             </div>
         </div>
     </div>

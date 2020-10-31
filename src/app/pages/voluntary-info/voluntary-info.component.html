@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Informações do voluntário</h1>
+
+        <h2 class="subtitle">Candidaturas realizadas</h2>
+        <div class="necessities-wrapper">
+            <div class="necessity" *ngFor="let necessity of necessities">
+                <div class="wrapper">
+                    <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
+                    <b> Aguardando aprovação da entidade </b>
+                </div>
+            </div>
+            <div *ngIf="necessities.length == 0" class="empty-text">
+                Este voluntário não finalizou nenhuma atividade até este momento
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,9 @@ import { NecessityService } from 'src/app/services/necessity/necessity.service';
 })
 export class ListCandidaturesComponent implements OnInit {
   necessities = []
+  acceptedNecessities = []
+  refusedNecessities = []
+  finishedNecessities = []
 
   constructor(private necessityService : NecessityService) { }
 
@@ -16,6 +19,27 @@ export class ListCandidaturesComponent implements OnInit {
       console.log(result.body)
       result.body.forEach(necessity => {
         this.necessities.push(necessity)
+      });
+    })
+
+    this.necessityService.getAccepted().subscribe( (result : any)=> {
+      console.log(result.body)
+      result.body.forEach(necessity => {
+        this.acceptedNecessities.push(necessity)
+      });
+    })
+
+    this.necessityService.getRefused().subscribe( (result : any)=> {
+      console.log(result.body)
+      result.body.forEach(necessity => {
+        this.refusedNecessities.push(necessity)
+      });
+    })
+
+    this.necessityService.getFinished().subscribe( (result : any)=> {
+      console.log(result.body)
+      result.body.forEach(necessity => {
+        this.finishedNecessities.push(necessity)
       });
     })
   }

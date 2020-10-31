@@ -4,6 +4,8 @@ import { CandidatureService } from 'src/app/services/candidature/candidature.ser
 import { LoginService } from 'src/app/services/login/login.service';
 import { NecessityService } from 'src/app/services/necessity/necessity.service';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-list-necessity',
   templateUrl: './list-necessity.component.html',
@@ -159,7 +161,14 @@ export class ListNecessityComponent implements OnInit {
           }
         )
       });
+
+        this.necessities.forEach(necessity => {
+            necessity.data_inicio = moment(necessity.data_inicio).format('DD/MM/YY')
+            necessity.data_fim = moment(necessity.data_fim).format('DD/MM/YY')
+
+        });
     })
+
 
     this.userName = localStorage.getItem('userName')
     this.role = localStorage.getItem('role')

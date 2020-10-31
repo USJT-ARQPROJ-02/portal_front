@@ -8,6 +8,7 @@
                 <div class="wrapper">
                     <h3 class="name">{{ necessity.nome }}</h3>
                     <p class="type">{{ necessity.tipo_voluntariado }}</p>
+                    <p class="date" *ngIf="necessity.data_inicio"> <span>{{ necessity.data_inicio }}</span> à <span>{{ necessity.data_fim }}</span></p>
                     <p class="address">{{ necessity.endereco }}</p>
                 </div>
                 <button class="know-more" (click)="candidature(necessity.id)" *ngIf="role != 'entidade'">Candidatar-se</button>

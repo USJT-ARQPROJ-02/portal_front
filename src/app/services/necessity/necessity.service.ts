@@ -52,4 +52,59 @@ export class NecessityService {
     return this.http.get(fullAddress, httpOptions)
   }
 
+  getAccepted() {
+    let fullAddress = this.apiUrl + '/api/candidatura/voluntario?status=true';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      }), observe: 'response' as 'body'
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
+
+  getRefused() {
+    let fullAddress = this.apiUrl + '/api/candidatura/voluntario?status=false';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      }), observe: 'response' as 'body'
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
+
+  getFinished() {
+    let fullAddress = this.apiUrl + '/api/candidatura/voluntario/encerradas';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      }), observe: 'response' as 'body'
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
+
+  getFinishedById(id) {
+    let fullAddress = this.apiUrl + '/api/candidatura/voluntario/' + id;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      }), observe: 'response' as 'body'
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
 }
