@@ -18,7 +18,7 @@
             <div class="necessity" *ngFor="let necessity of acceptedNecessities">
                 <div class="wrapper">
                     <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
-                    <b> Aguardando aprovação da entidade </b>
+                    <b> Você foi aprovado pela entidade </b>
                 </div>
             </div>
             <div *ngIf="acceptedNecessities.length == 0" class="empty-text">
@@ -44,7 +44,7 @@
             <div class="necessity" *ngFor="let necessity of finishedNecessities">
                 <div class="wrapper">
                     <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
-                    <b> Aguardando aprovação da entidade </b>
+                    <p class="date" *ngIf="necessity.data_inicio"> <span>{{ necessity.Necessidade.data_inicio }}</span> à <span>{{ necessity.Necessidade.data_fim }}</span></p>
                 </div>
             </div>
             <div *ngIf="finishedNecessities.length == 0" class="empty-text">
