@@ -38,5 +38,18 @@ export class NecessityService {
     return this.http.get(fullAddress, httpOptions)
   }
 
+  getPending() {
+    let fullAddress = this.apiUrl + '/api/candidatura/voluntario';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      }), observe: 'response' as 'body'
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
 
 }

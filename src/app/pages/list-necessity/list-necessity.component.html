@@ -10,8 +10,21 @@
                     <p class="type">{{ necessity.tipo_voluntariado }}</p>
                     <p class="address">{{ necessity.endereco }}</p>
                 </div>
-                <button class="know-more" (click)="candidature(necessity.id)">Candidatar-se</button>
+                <button class="know-more" (click)="candidature(necessity.id)" *ngIf="role != 'entidade'">Candidatar-se</button>
             </div>
+        </div>
+
+        <h1 class="title secondary">Necessidades próximas de você</h1>
+
+        <div class="map">
+            <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng" [styles]="style">
+                <agm-marker          
+                    *ngFor="let marker of markers"
+                    [latitude]="marker.lat"
+                    [longitude]="marker.lng"
+                >
+                </agm-marker>
+              </agm-map>
         </div>
     </div>
 </div>

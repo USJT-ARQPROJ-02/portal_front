@@ -10,6 +10,7 @@ import { RoleGuardService as RoleGuard } from './services/auth/role-guard.servic
 import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
 import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { ListCandidaturesComponent } from './pages/list-candidatures/list-candidatures.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,11 @@ const routes: Routes = [
   { 
     path: 'listar-necessidade',
     component: ListNecessityComponent,
+    canActivate: [AuthGuard],
+  },
+  { 
+    path: 'listar-candidaturas',
+    component: ListCandidaturesComponent,
     canActivate: [AuthGuard],
   },
   {

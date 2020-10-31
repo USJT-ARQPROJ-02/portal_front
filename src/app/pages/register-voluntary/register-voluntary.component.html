@@ -46,8 +46,15 @@
                     </mat-form-field>
                 </div>
                 <mat-form-field class="full-width"> 
+                    <mat-label>CEP</mat-label>
+                    <input matInput formControlName="cep" [errorStateMatcher]="matcher" placeholder="Digite o seu CEP">
+                    <mat-error *ngIf="errorHandling('cep', 'required')">
+                        O CEP é <strong>obrigatório</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width"> 
                     <mat-label>Endereço</mat-label>
-                    <textarea matInput formControlName="endereco" [errorStateMatcher]="matcher" placeholder="Rua dos Bobos, nº 0"></textarea>
+                    <input matInput formControlName="endereco" [errorStateMatcher]="matcher" placeholder="Rua dos Bobos, nº 0">
                     <mat-error *ngIf="errorHandling('endereco', 'required')">
                         O endereço é <strong>obrigatório</strong>
                     </mat-error>

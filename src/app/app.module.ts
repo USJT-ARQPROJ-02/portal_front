@@ -8,6 +8,7 @@ import { RegisterVoluntaryComponent } from './pages/register-voluntary/register-
 import { HeaderComponent } from './components/header/header.component';
 
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -19,6 +20,10 @@ import { RegisterNecessityComponent } from './pages/register-necessity/register-
 import { ListNecessityComponent } from './pages/list-necessity/list-necessity.component';
 import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { AgmCoreModule } from '@agm/core';
+import { ListCandidaturesComponent } from './pages/list-candidatures/list-candidatures.component';
+import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     RegisterNecessityComponent,
     ListNecessityComponent,
     HomeEntityComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ListCandidaturesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,12 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     FormsModule,
     HttpClientModule,
     MatSelectModule,
-    MatIconModule  
+    MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCdksnWRZphUOij5xt9bVg5cFGIRyte6NY'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

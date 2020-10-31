@@ -6,7 +6,14 @@
                 <a href="#" > Necessidades </a>
                 <ul class="sub-menu">
                     <li><a href="" [routerLink]="'/cadastro-necessidade'" *ngIf="role == 'entidade'">Cadastrar</a></li>
-                    <li><a href="" [routerLink]="'/listar-necessidade'" >Listar</a></li>
+                    <li><a href="" [routerLink]="'/listar-necessidade'">Listar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" > Candidaturas </a>
+                <ul class="sub-menu">
+                    <li><a href="" [routerLink]="'/home-entidade'" *ngIf="role == 'entidade'">Gerenciar</a></li>
+                    <li><a href="" [routerLink]="'/listar-candidaturas'" *ngIf="role == 'voluntario'">Acompanhar</a></li>
                 </ul>
             </li>
         </ul>

@@ -3,6 +3,9 @@
     <div class="container">
         <h1 class="title">Lista de candidaturas</h1>
 
+        <ng-container *ngIf="necessities.length == 0">
+            <h2 class="necessity-name">Não há nenhuma candidatura atualmente</h2>
+        </ng-container>
         <div class="wrapper" *ngFor="let necessity of necessities">
             <h2 class="necessity-name">{{ necessity.nome }}</h2>
             

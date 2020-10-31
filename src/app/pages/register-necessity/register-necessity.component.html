@@ -5,17 +5,16 @@
 
         <div class="form-container">
             <form class="contact" [formGroup]="registerFormGroup">
-                <mat-form-field class="full-width"> 
+                <mat-form-field class="full-width">
                     <mat-label>Nome</mat-label>
-                    <input matInput formControlName="nome"
-                    type="name" [errorStateMatcher]="matcher">
+                    <input matInput formControlName="nome" type="name" [errorStateMatcher]="matcher">
                     <mat-error *ngIf="errorHandling('nome', 'required')">
                         O nome é <strong>obrigatório</strong>
                     </mat-error>
                 </mat-form-field>
 
 
-                <mat-form-field class="full-width"> 
+                <mat-form-field class="full-width">
                     <mat-label>Tipos</mat-label>
                     <mat-select formControlName="tipo_voluntariado">
                         <mat-option *ngFor="let type of entityTypes" [value]="type">{{type}}</mat-option>
@@ -25,21 +24,40 @@
                     </mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="full-width"> 
+                <mat-form-field class="full-width">
                     <mat-label>Endereço</mat-label>
-                    <textarea matInput formControlName="endereco" [errorStateMatcher]="matcher" placeholder="Rua dos Bobos, nº 0"></textarea>
+                    <input matInput formControlName="endereco" [errorStateMatcher]="matcher"
+                        placeholder="Rua dos Bobos, nº 0">
                     <mat-error *ngIf="errorHandling('endereco', 'required')">
                         O endereço é <strong>obrigatório</strong>
                     </mat-error>
                 </mat-form-field>
 
-                <mat-form-field class="full-width"> 
+                <mat-form-field class="full-width">
                     <mat-label>Descrição</mat-label>
-                    <textarea matInput formControlName="descricao" [errorStateMatcher]="matcher" placeholder="Fale um pouco sobre a necessidade"></textarea>
+                    <textarea matInput formControlName="descricao" [errorStateMatcher]="matcher"
+                        placeholder="Fale um pouco sobre a necessidade"></textarea>
                     <mat-error *ngIf="errorHandling('descricao', 'required')">
                         A descrição é <strong>obrigatória</strong>
                     </mat-error>
                 </mat-form-field>
+
+                <div class="date">
+                    <mat-form-field class="first-input">
+                        <mat-label>Período</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="data_inicio" [max]="todayDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+    
+                      <mat-form-field>
+                        <mat-label>Período</mat-label>
+                        <input matInput [min]="this.registerFormGroup.controls.data_inicio.value" [max]="todayDate" [matDatepicker]="picker1"
+                          formControlName="data_fim">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field>
+                </div>
 
                 <button class="send fadeInUp" [disabled]="registerFormGroup.invalid" (click)="send()">Enviar</button>
             </form>
