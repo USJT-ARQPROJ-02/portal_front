@@ -24,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
 import { ListCandidaturesComponent } from './pages/list-candidatures/list-candidatures.component';
 import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
 import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.co
     HomeEntityComponent,
     ResetPasswordComponent,
     ListCandidaturesComponent,
-    VoluntaryInfoComponent
+    VoluntaryInfoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

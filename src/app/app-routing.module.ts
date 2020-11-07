@@ -12,6 +12,7 @@ import { HomeEntityComponent } from './pages/home-entity/home-entity.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ListCandidaturesComponent } from './pages/list-candidatures/list-candidatures.component';
 import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'voluntario', component: RegisterVoluntaryComponent },
   { path: 'entidade', component: RegisterEntityComponent },
   { path: 'reset-password', component: ResetPasswordComponent, },
+  { path: 'home', component: HomeComponent, },
   { 
     path: 'listar-necessidade',
     component: ListNecessityComponent,
