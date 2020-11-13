@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +26,7 @@ import { ListCandidaturesComponent } from './pages/list-candidatures/list-candid
 import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
 import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
 import { HomeComponent } from './pages/home/home.component';
+import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-profile.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { HomeComponent } from './pages/home/home.component';
     ResetPasswordComponent,
     ListCandidaturesComponent,
     VoluntaryInfoComponent,
-    HomeComponent
+    HomeComponent,
+    VoluntaryProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCdksnWRZphUOij5xt9bVg5cFGIRyte6NY'
     })

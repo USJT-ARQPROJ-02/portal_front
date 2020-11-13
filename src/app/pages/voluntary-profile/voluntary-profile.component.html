@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Minha conta</h1>
+
+        <div class="wrapper">
+            <div class="picture">
+                <img class="icon" src="../../../assets/img/avatar.png" alt="">
+            </div>
+            <div class="info" *ngIf="informations">
+                <ul>
+                    <li class="name">{{informations.nome}}</li>
+                    <li>{{informations.email}}</li>
+                    <li class="phone">{{informations.telefone}}</li>
+               
+                </ul>
+            </div>
+        </div>
+        <div class="secondary-info">
+            <h2>Outras informações</h2>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="informations">
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="endereco">
+                    <th mat-header-cell *matHeaderCellDef> Endereço </th>
+                    <td mat-cell *matCellDef="let element"> {{element.endereco}} </td>
+                </ng-container>
+                
+                <!-- Name Column -->
+                <ng-container matColumnDef="cpf_cnpj">
+                    <th mat-header-cell *matHeaderCellDef> CPF </th>
+                    <td mat-cell *matCellDef="let element"> {{element.cpf_cnpj}} </td>
+                </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</div>

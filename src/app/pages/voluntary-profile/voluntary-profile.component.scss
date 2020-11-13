@@ -1,0 +1,68 @@
+.main {
+    .container {
+        padding: 0 100px;
+    }
+
+    .title {
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 80px;
+        font-size: 30px;
+        color: #424242;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+
+        .picture {
+            img  {
+                height: 250px;
+            }
+        }
+
+        .info {
+            font-size: 20px;
+            margin-left: 50px;
+
+            ul {
+                li {
+                    margin-bottom: 10px;
+                    
+                    &.name {
+                        font-size: 25px;
+                        font-weight: bold;
+                    }
+
+                    &.phone {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .secondary-info {
+        margin-top: 30px;
+
+        h2 {
+            font-size: 25px;
+        }
+
+        table {
+            width: 100%;
+        }
+    }
+
+}
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
