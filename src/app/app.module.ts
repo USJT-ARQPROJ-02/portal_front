@@ -27,6 +27,7 @@ import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
 import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
 import { HomeComponent } from './pages/home/home.component';
 import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-profile.component';
+import { DonationsComponent } from './pages/donations/donations.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-p
     ListCandidaturesComponent,
     VoluntaryInfoComponent,
     HomeComponent,
-    VoluntaryProfileComponent
+    VoluntaryProfileComponent,
+    DonationsComponent
   ],
   imports: [
     BrowserModule,

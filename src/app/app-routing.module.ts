@@ -14,6 +14,7 @@ import { ListCandidaturesComponent } from './pages/list-candidatures/list-candid
 import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
 import { HomeComponent } from './pages/home/home.component';
 import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-profile.component';
+import { DonationsComponent } from './pages/donations/donations.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'entidade', component: RegisterEntityComponent },
   { path: 'reset-password', component: ResetPasswordComponent, },
   { path: 'login', component: LoginComponent, },
+  { path: 'doacoes', component: DonationsComponent, },
   { 
     path: 'listar-necessidade',
     component: ListNecessityComponent,

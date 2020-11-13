@@ -1,0 +1,36 @@
+
+<!-- One -->
+<section id="one" class="wrapper style1 align-center">
+    <div class="container">
+        <header>
+            <h2>Ajude nossa organização a continuar funcionando!</h2>
+            <p>Somos uma organização não governamental, dessa forma não possuimos uma renda mensal fixa.
+                <br>
+               Qualquer valor doado será de enorme ajuda, desde já agradecemos o apoio.
+            </p>
+        </header>
+        <div class="row 200%">
+            <section class="4u 12u$(small)">
+                <i class="icon big rounded fa-clock-o"></i>
+                <p>Nossos dados bancários:</p>
+            </section>
+            <section class="4u 12u$(small)">
+                <i class="icon big rounded fa-camera-retro"></i>
+                <ul>
+                    <li>Agência: 0000</li>
+                    <li>Conta: 0000000-0</li>
+                    <li>Banco: Banco genérico brasileiro S.A.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="row 200% comprovante">
+            <section class="4u 12u$(small)">
+                <i class="icon big rounded fa-clock-o"></i>
+                <p>Nos envie o comprovante da doação:</p>
+                <input type="file" placeholder="Anexar a imagem" accept="image/png, image/jpeg" id="imagem-1" (change)="handleUpload($event)">
+                <button (click)="send()" class="send">Enviar</button>
+            </section>
+        </div>
+    </div>
+</section>
