@@ -13,14 +13,17 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { ListCandidaturesComponent } from './pages/list-candidatures/list-candidatures.component';
 import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
 import { HomeComponent } from './pages/home/home.component';
+import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-profile.component';
+import { DonationsComponent } from './pages/donations/donations.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent, },
+  { path: '', component: HomeComponent, },
   { path: 'voluntario', component: RegisterVoluntaryComponent },
   { path: 'entidade', component: RegisterEntityComponent },
   { path: 'reset-password', component: ResetPasswordComponent, },
-  { path: 'home', component: HomeComponent, },
+  { path: 'login', component: LoginComponent, },
+  { path: 'doacoes', component: DonationsComponent, },
   { 
     path: 'listar-necessidade',
     component: ListNecessityComponent,
@@ -29,6 +32,11 @@ const routes: Routes = [
   { 
     path: 'listar-candidaturas',
     component: ListCandidaturesComponent,
+    canActivate: [AuthGuard],
+  },
+  { 
+    path: 'meu-perfil',
+    component: VoluntaryProfileComponent,
     canActivate: [AuthGuard],
   },
   {

@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -27,6 +28,8 @@ import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.co
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartsModule } from 'ng2-charts';
+import { DonationsComponent } from './pages/donations/donations.component';
+import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-profile.component';
 
 
 @NgModule({
@@ -43,7 +46,9 @@ import { ChartsModule } from 'ng2-charts';
     ListCandidaturesComponent,
     VoluntaryInfoComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    VoluntaryProfileComponent,
+    DonationsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,7 @@ import { ChartsModule } from 'ng2-charts';
     MatDatepickerModule,
     MatNativeDateModule,
     ChartsModule,
+    MatTableModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCdksnWRZphUOij5xt9bVg5cFGIRyte6NY'
     })

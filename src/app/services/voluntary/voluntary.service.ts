@@ -23,4 +23,18 @@ export class VoluntaryService {
     
     return this.http.post(fullAddress, data, httpOptions)
   }
+
+  getProfile(){
+    let fullAddress = this.apiUrl + '/api/perfil';
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
 }

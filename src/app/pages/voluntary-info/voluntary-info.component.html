@@ -3,12 +3,12 @@
     <div class="container">
         <h1 class="title">Informações do voluntário</h1>
 
-        <h2 class="subtitle">Candidaturas realizadas</h2>
+        <h2 class="subtitle">Trabalhos realizados</h2>
         <div class="necessities-wrapper">
             <div class="necessity" *ngFor="let necessity of necessities">
                 <div class="wrapper">
                     <h3 class="name">{{ necessity.Necessidade.nome }}</h3>
-                    <b> Aguardando aprovação da entidade </b>
+                    <p class="date" *ngIf="necessity.Necessidade.data_inicio"> <span>{{ necessity.Necessidade.data_inicio }}</span> à <span>{{ necessity.Necessidade.data_fim }}</span></p>
                 </div>
             </div>
             <div *ngIf="necessities.length == 0" class="empty-text">
