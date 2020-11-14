@@ -9,11 +9,11 @@ import * as Chart from 'chart.js'
 })
 export class DashboardComponent implements OnInit {
 
-  descricaoYear = ['2019', '2018'];
-  quantidadeYear = [40, 25];
+  descricaoYear = [];
+  quantidadeYear = [];
   chartYear;
-  descricaoMonth = ['Junho', 'Agosto'];
-  quantidadeMonth = [10, 25];
+  descricaoMonth = [];
+  quantidadeMonth = [];
   chartMont;
 
   constructor(private necessityService: NecessityService) { }
