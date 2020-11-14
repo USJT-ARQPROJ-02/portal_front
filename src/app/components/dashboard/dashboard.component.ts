@@ -33,7 +33,6 @@ export class DashboardComponent implements OnInit {
       this.makeGraphicYear();
       this.makeGraphicMonth();
     })
-
   }
 
   makeGraphicYear() {
