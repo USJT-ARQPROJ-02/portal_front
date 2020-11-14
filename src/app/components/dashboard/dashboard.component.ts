@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NecessityService } from 'src/app/services/necessity/necessity.service';
 import * as Chart from 'chart.js'
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,7 +27,7 @@ export class DashboardComponent implements OnInit {
           this.quantidadeYear.push(x.count);
         }
         if(x.month){
-          this.descricaoMonth.push(x.month);
+          this.descricaoMonth.push(moment(x.month).format('MM/YY'));
           this.quantidadeMonth.push(x.count);
         }
       });
