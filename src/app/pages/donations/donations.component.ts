@@ -26,6 +26,7 @@ export class DonationsComponent implements OnInit {
   send() {
     this.donationService.send(this.fd).subscribe((result : any) => {
       console.log(result)
+      alert('Recibo enviado com sucesso!')
     })
   }
 
