@@ -9,25 +9,25 @@ import { DonationService } from 'src/app/services/donation/donation.service';
 export class DonationsComponent implements OnInit {
 
   receipt
-  formData = new FormData()
+  selectedFile: File = null;
+  fd = new FormData();
+
 
   constructor(private donationService : DonationService) { }
 
   ngOnInit(): void {
   }
 
-  handleUpload(event) {
-    let files = event.target.files;
-    
-    this.formData = new FormData()
-
-    this.formData.append('file', files)
+  createFormData(event) {
+    this.selectedFile = <File>event.target.files[0];
+    this.fd.append('file', this.selectedFile);
   }
 
   send() {
-    this.donationService.send(this.formData).subscribe((result : any) => {
+    this.donationService.send(this.fd).subscribe((result : any) => {
       console.log(result)
     })
   }
+
 
 }
