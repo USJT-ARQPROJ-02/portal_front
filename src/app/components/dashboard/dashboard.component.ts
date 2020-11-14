@@ -30,9 +30,10 @@ export class DashboardComponent implements OnInit {
           this.quantidadeMonth.push(x.count);
         }
       });
+      this.makeGraphicYear();
+      this.makeGraphicMonth();
     })
-    this.makeGraphicYear();
-    this.makeGraphicMonth();
+
   }
 
   makeGraphicYear() {
