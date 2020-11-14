@@ -25,6 +25,8 @@ import { ListCandidaturesComponent } from './pages/list-candidatures/list-candid
 import { DateAdapter, MatNativeDateModule } from '@angular/material/core';
 import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { HomeComponent } from './pages/home/home.component';
     ResetPasswordComponent,
     ListCandidaturesComponent,
     VoluntaryInfoComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCdksnWRZphUOij5xt9bVg5cFGIRyte6NY'
     })

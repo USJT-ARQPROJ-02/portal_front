@@ -30,7 +30,7 @@ export class NecessityService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        //'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
         'Access-Control-Allow-Origin': '*'
       }), observe: 'response' as 'body'
     };
@@ -101,6 +101,19 @@ export class NecessityService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      }), observe: 'response' as 'body'
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
+
+  getDashboard() {
+    let fullAddress = this.apiUrl + '/api/necessidade/dashboard';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
       }), observe: 'response' as 'body'
     };

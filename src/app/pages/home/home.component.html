@@ -55,7 +55,16 @@
 						<p>Um pouco das causas que temos esperando por você.</p>
 					</header>
 					<div class="row">
-                    <!--<app-list-necessity></app-list-necessity> -->
+						<div class="necessities-wrapper">
+							<div class="necessity" *ngFor="let necessity of lastNecessities">
+								<div class="wrapper">
+									<h3 class="name">{{ necessity.nome }}</h3>
+									<p class="type">{{ necessity.tipo_voluntariado }}</p>
+									<p class="date" *ngIf="necessity.data_inicio"> <span>{{ necessity.data_inicio }}</span> à <span>{{ necessity.data_fim }}</span></p>
+									<p class="address">{{ necessity.endereco }}</p>
+								</div>
+							</div>
+						</div>
 					</div>
 					<footer>
 						<ul class="actions">
@@ -66,7 +75,7 @@
 					</footer>
 				</div>
 			</section>
-
+			
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
@@ -123,6 +132,6 @@
 					</ul>
 				</div>
 			</footer>
-
+			<app-dashboard></app-dashboard>
 	</body>
 </html>
