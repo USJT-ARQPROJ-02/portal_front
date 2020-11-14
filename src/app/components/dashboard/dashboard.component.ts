@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.necessityService.getDashboard().subscribe((necessidades: any) => {
-      necessidades.body.array.forEach(x => {
+      necessidades.body.forEach(x => {
         if (x.year) {
           this.descricaoYear.push(x.year);
           this.quantidadeYear.push(x.count);
