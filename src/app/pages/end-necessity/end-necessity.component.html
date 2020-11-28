@@ -18,6 +18,19 @@
                             </div>
                     </div>
                 </ng-container>
+                <div class="finished">
+                    <h2 class="necessity-name">Finalizadas</h2>
+                    <ng-container  *ngFor="let necessity of necessities">
+                                <div class="necessity" *ngIf="necessity.status == false">
+                                <div>
+                                    <h3 class="name">{{ necessity.nome }}</h3>
+                                    <p class="email">{{ necessity.tipo_voluntariado }}</p>
+                                    <p class="address">{{ necessity.descricao }}</p>
+                                    <a href="#" class="more-information" (click)="openMoreInfo(necessity.id, $event)">Finalizar necessidade</a>
+                                </div>
+                            </div>
+                    </ng-container>
+                </div>
             </div>
         </div>
     </div>
