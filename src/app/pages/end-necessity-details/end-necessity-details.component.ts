@@ -84,6 +84,7 @@ export class EndNecessityDetailsComponent implements OnInit {
 
     this.necessityService.endNecessity(this.fd,this.route.snapshot.queryParams['id']).subscribe((result : any) => {
       console.log(result)
+      alert('Necessidade finalizada com sucesso!')
     })
   }
 }
