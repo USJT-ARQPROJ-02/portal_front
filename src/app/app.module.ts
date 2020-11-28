@@ -28,6 +28,8 @@ import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.co
 import { HomeComponent } from './pages/home/home.component';
 import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-profile.component';
 import { DonationsComponent } from './pages/donations/donations.component';
+import { EndNecessityComponent } from './pages/end-necessity/end-necessity.component';
+import { EndNecessityDetailsComponent } from './pages/end-necessity-details/end-necessity-details.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { DonationsComponent } from './pages/donations/donations.component';
     VoluntaryInfoComponent,
     HomeComponent,
     VoluntaryProfileComponent,
-    DonationsComponent
+    DonationsComponent,
+    EndNecessityComponent,
+    EndNecessityDetailsComponent
   ],
   imports: [
     BrowserModule,

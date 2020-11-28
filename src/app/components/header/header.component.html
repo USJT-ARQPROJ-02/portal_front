@@ -6,6 +6,7 @@
                 <a href="#" > Necessidades </a>
                 <ul class="sub-menu">
                     <li><a href="" [routerLink]="'/cadastro-necessidade'" *ngIf="role == 'entidade'">Cadastrar</a></li>
+                    <li><a href="" [routerLink]="'/finalizar-necessidades'" *ngIf="role == 'entidade'">Finalizar</a></li>
                     <li><a href="" [routerLink]="'/listar-necessidade'">Listar</a></li>
                 </ul>
             </li>

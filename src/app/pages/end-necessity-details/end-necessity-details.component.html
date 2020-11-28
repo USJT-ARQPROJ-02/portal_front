@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Lista de candidaturas</h1>
+
+        <ng-container *ngIf="necessities.length == 0">
+            <h2 class="necessity-name">Não há nenhuma necessidade atualmente</h2>
+        </ng-container>
+        <div class="wrapper" >
+            <div class="necessities-wrapper">
+                <form class="contact" [formGroup]="registerFormGroup">
+                    <mat-form-field class="full-width"> 
+                        <mat-label>Feedback sobre o evento</mat-label>
+                        <input matInput formControlName="feedback"
+                        type="name" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="errorHandling('feedback', 'required')">
+                            O nome é <strong>obrigatório</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <input type="file" placeholder="Anexar a imagem" accept="image/png, image/jpeg" id="imagem-1" (change)="saveFile($event)">
+                    <div class="images">
+                        <div *ngFor="let item of images; let index = index;">
+                            <img src="{{item}}" class="preview-image">
+                          </div>
+                    </div>
+                    <button class="send fadeInUp" [disabled]="registerFormGroup.invalid" (click)="send()">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

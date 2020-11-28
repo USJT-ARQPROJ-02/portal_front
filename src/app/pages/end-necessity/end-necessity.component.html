@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="main">
+    <div class="container">
+        <h1 class="title">Lista de candidaturas</h1>
+
+        <ng-container *ngIf="necessities.length == 0">
+            <h2 class="necessity-name">Não há nenhuma necessidade atualmente</h2>
+        </ng-container>
+        <div class="wrapper" >
+            <div class="necessities-wrapper">
+                <div class="necessity"  *ngFor="let necessity of necessities">
+                    <ng-container *ngIf="necessity.status == true">
+                        <div>
+                            <h3 class="name">{{ necessity.nome }}</h3>
+                            <p class="email">{{ necessity.tipo_voluntariado }}</p>
+                            <p class="address">{{ necessity.descricao }}</p>
+                            <a href="#" class="more-information" (click)="openMoreInfo(necessity.id, $event)">Finalizar necessidade</a>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

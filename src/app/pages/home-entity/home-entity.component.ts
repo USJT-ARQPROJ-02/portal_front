@@ -16,6 +16,9 @@ export class HomeEntityComponent implements OnInit {
   ngOnInit(): void {
     this.candidatureService.getAll().subscribe( (result : any)=> {
       console.log(result)
+      
+      localStorage.setItem('id_entidade', result[0].entidade_id)
+
       result.forEach(necessity => {
         this.necessities.push(necessity)
       });

@@ -15,6 +15,8 @@ import { VoluntaryInfoComponent } from './pages/voluntary-info/voluntary-info.co
 import { HomeComponent } from './pages/home/home.component';
 import { VoluntaryProfileComponent } from './pages/voluntary-profile/voluntary-profile.component';
 import { DonationsComponent } from './pages/donations/donations.component';
+import { EndNecessityComponent } from './pages/end-necessity/end-necessity.component';
+import { EndNecessityDetailsComponent } from './pages/end-necessity-details/end-necessity-details.component';
 
 
 const routes: Routes = [
@@ -50,6 +52,22 @@ const routes: Routes = [
   {
     path: 'home-entidade',
     component: HomeEntityComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: 'entidade'
+    }
+  },
+  {
+    path: 'finalizar-necessidades',
+    component: EndNecessityComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: 'entidade'
+    }
+  },
+  {
+    path: 'finalizar-necessidade',
+    component: EndNecessityDetailsComponent,
     canActivate: [RoleGuard],
     data: {
       expectedRole: 'entidade'

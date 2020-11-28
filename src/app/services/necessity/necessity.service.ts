@@ -107,4 +107,30 @@ export class NecessityService {
     
     return this.http.get(fullAddress, httpOptions)
   }
+
+  getNecessityById(id) {
+    let fullAddress = this.apiUrl + '/api/entidade/necessidades/' + id;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token').toString(),
+        'Access-Control-Allow-Origin': '*'
+      }), observe: 'response' as 'body'
+    };
+    
+    return this.http.get(fullAddress, httpOptions)
+  }
+
+  endNecessity(data, id) {
+    let fullAddress = this.apiUrl + '/api/necessidade/' + id;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+    
+    return this.http.put(fullAddress, data, httpOptions)
+  }
 }

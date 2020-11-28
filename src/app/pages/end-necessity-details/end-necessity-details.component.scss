@@ -1,0 +1,174 @@
+.main {
+    .title {
+        text-align: center;
+        margin: 20px 0;
+        margin-bottom: 50px;
+        font-size: 30px;
+        color: #424242;
+    }
+
+    .wrapper {
+        margin-bottom: 50px;
+
+        .necessity-name {
+            color: #424242;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 30px;
+
+            &::before {
+                content: '';
+                display: block;
+            }
+        }
+
+        .necessities-wrapper {
+            display: flex;
+            justify-content: center;
+
+            .necessity {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-shadow: 0px 0px 10px #c3c3c3;
+                border-radius: 15px;
+                padding: 20px;
+                width: 350px;
+                text-align: center;
+                margin-right: 40px;
+    
+                .name {
+                    font-size: 20px;
+                    font-weight: 600;    
+                    margin: 0;
+                    margin-bottom: 10px;
+                    padding-bottom: 10px;
+                }
+    
+                .icon {
+                    max-width: 100%;
+                    height: 100px;
+                }
+    
+                .address {
+                    margin-bottom: 10px;
+                    line-break: anywhere;
+                }
+
+                .more-information {
+                    font-size: 18px;
+                    color: blue;
+                    display: block;
+                    margin-top: 20px;
+                }
+               
+    
+                .button-wrapper {
+                    position: relative;
+                    display: flex;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: -15px;
+                        width: 100%;
+                        height: 1px;
+                        background-color: grey;
+                    }
+
+                    .accept, .refuse {
+                        display: block;
+                        margin: 0 auto;
+                        color: white;
+                        padding: 10px 35px;
+                        border-radius: 15px;
+                        box-shadow: 2px 2px 6px grey;
+                        background-color: #17174b;
+                        transition: .3s all;
+                        
+            
+                        &:hover {
+                            box-shadow: none;
+                            transform: translateY(-1px);
+                        }
+            
+                        &:disabled {
+                            background-color: grey;
+            
+                            &:hover {
+                                box-shadow: 2px 2px 6px grey;
+                                transform: none;
+                            }
+                        }
+                    }
+
+                    .refuse {
+                        background-color: rgb(119, 13, 13);
+                    }
+                }
+            }
+        }
+    }
+    
+    form {
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid grey;
+        border-radius: 20px;
+        padding: 20px;
+
+        input {
+            margin-bottom: 20px;
+        }
+    }
+
+    .images {
+        display: flex;
+        margin-bottom: 15px;
+    }
+
+    .preview-image {
+        height: 100px;
+        border: 3px solid black;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    .send {
+        display: block;
+        margin: 0 auto;
+        color: white;
+        padding: 10px 35px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 6px grey;
+        background-color: #17174b;
+        transition: .3s all;
+
+        &:hover {
+            box-shadow: none;
+            transform: translateY(-1px);
+        }
+
+        &:disabled {
+            background-color: grey;
+
+            &:hover {
+                box-shadow: 2px 2px 6px grey;
+                transform: none;
+            }
+        }
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
